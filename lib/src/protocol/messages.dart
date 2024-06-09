@@ -99,7 +99,7 @@ class MessageSet {
     var builder = KafkaBytesBuilder();
     builder.addInt8(0); // magicByte
     builder.addInt8(message.attributes!.toInt());
-    builder.addBytes(message.key!);
+    builder.addBytes(message.key);
     builder.addBytes(message.value);
 
     var data = builder.takeBytes();
